@@ -1,3 +1,0 @@
----
-title: Lito-tipografía Mercantil
----

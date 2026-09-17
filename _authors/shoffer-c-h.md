@@ -1,3 +1,0 @@
----
-title: Shöffer, C. H.
----

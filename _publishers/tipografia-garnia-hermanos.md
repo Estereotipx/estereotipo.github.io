@@ -1,3 +1,0 @@
----
-title: Tipografía Garnia Hermanos
----
