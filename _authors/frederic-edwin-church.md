@@ -1,0 +1,3 @@
+---
+title: Frederic Edwin Church
+---
