@@ -154,6 +154,14 @@ figure img:hover {
   margin-top: .5rem;
 }
 
+.ficha-extract .expo p {
+  margin-top: .5rem;
+}
+
+.expo p {
+  font-size: 1.1rem;
+}
+
 .proyecto-tienda ul {
   line-height: 1;
   font-size: 1em;
@@ -256,14 +264,14 @@ figure img:hover {
 
   .avatar,
   .portada {
-    flex-basis: 45%;
-    max-width: 45%;
+    flex-basis: 60%;
+    max-width: 60%;
     padding-top: 0rem;
   }
 
-  .ficha-container {
-    flex-basis: 55%;
-    max-width: 55%;
+  .ficha-container .expo {
+    flex-basis: 40%;
+    max-width: 40%;
   }
 
   .img-frame {
@@ -284,14 +292,14 @@ figure img:hover {
 
   .avatar,
   .portada {
-    flex-basis: 39%;
-    max-width: 39%;
+    flex-basis: 60%;
+    max-width: 60%;
     padding-top: 0;
   }
 
   .ficha-container {
-    flex-basis: 53%;
-    max-width: 53%;
+    flex-basis: 40%;
+    max-width: 40%;
   }
 }
 

@@ -1,7 +1,8 @@
 ---
-tema: de Frederic Edwin Church
+tema: 
 tag: paisaje-colombia
+artista: Frederic Edwin Church
 ---
-This digital collection brings together the field drawings and sketches that Frederic Edwin Church created during his 1853 journey through Colombia (then New Granada). As a leading figure of the Hudson River School, Church traveled to South America in search of the sublime tropical landscapes that would inspire his most famous paintings.
+Esta colección digital reúne dibujos y bocetos de campo que Frederic Edwin Church realizó en su viaje de 1853 por Colombia (la antigua Nueva Granada). Como destacado representante de la Escuela del Río Hudson, Church viajó a Sudamérica en busca de paisajes tropicales sublimes que inspirarían sus pinturas más famosas.
 
-The works in this collection are primarily graphite and gouache sketches on paper, created on-site as Church traversed the region by foot, mule, and riverboat. They capture a remarkable range of subjects: the dramatic Tequendama Falls near Bogotá, the snow-capped peaks of the Andes (including Tolima and Ruiz), the Cauca River valley near Popayán, and the dense botanical life along the Río Magdalena.
+Las obras son, en su mayoría, bocetos en grafito y gouache sobre papel, hechos in situ durante sus desplazamientos a pie, en mula y en barco por la región. Representan una amplia gama de motivos: las cataratas del Tequendama cerca de Bogotá, los picos nevados de los Andes (Tolima y Ruiz), el valle del río Cauca cerca de Popayán y la densa vegetación del río Magdalena.
