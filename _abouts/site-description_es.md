@@ -2,14 +2,17 @@
 title: description
 lang: es
 ---
-{{site.title}} es un recurso para lectores, escritores, editores, estudiantes y profesores interesados en la cultura escrita venezolana en particular y latinoamericana en general. Reúne portadas, metadatos y descargas digitales de {{site.books.size}} obras de autores venezolanos digitalizadas en bibliotecas de Europa y las Américas. 
+Esta es una muestra no-code de un sitio hecho con MOREL-GaME (Galerías y Museos Enlazados). MOREL-GaME es una herramienta de código abierto para generar catálogos digitales de bajo costo para colecciones artísticas. 
+
+Los sitios MOREL-GaME ensamblan servicios gratuitos de almacenamiento (Archive.org/Wikimedia Commons), gestión de bases de datos (Zotero) y ejecución de eventos y tareas (GitHub Actions), para facilitar la gestión de catálogos digitales a galerías pequeñas, artistas independientes e instituciones públicas desfinanciadas.
+
 <!-- more -->
 
-La colección se organiza por listas dinámicas, que agrupan las obras de acuerdo a características en común:
+MOREL-GaME permite organizar las obras en listas dinámicas, agrupándolas de acuerdo a características en común como:
 
-- [autores]({{site.BASE_PATH}}/criteria/autor)
-- [ciudad de edición]({{site.BASE_PATH}}/criteria/ciudad)
-- [imprenta o editorial]({{site.BASE_PATH}}/criteria/editorial)
-- [fecha de edición]({{site.BASE_PATH}}/criteria/edicion). 
+- [artistas]({{site.BASE_PATH}}/criteria/author)
+- [lugar]({{site.BASE_PATH}}/criteria/city)
+- [año]({{site.BASE_PATH}}/criteria/edition)
 
-Adicionalmente,cuenta con un [buscador]({{site.BASE_PATH}}/search) que permite encontrar obras directamente por el título.
+
+Además tiene un [motor de búsqueda]({{site.BASE_PATH}}/search) que permite encontrar obras directamente por palabras clave.

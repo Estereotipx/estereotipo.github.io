@@ -6,7 +6,7 @@ layout: default
         <!--Búsqueda-->
         <a href="buscar"><div class="search-index"><i class="fa fa-search" aria-hidden="true" class="search-index"></i></div></a>
         
-
+        <h1 class="index">{{ site.tagline }}</h1>
         <!--- expo presentación -->
         <div class="row obras obra-suerte">
             <h2 class="index">Paisajes de Colombia en el siglo XIX</h2>
@@ -18,42 +18,5 @@ layout: default
         {% assign tag = "paisaje-colombia" %}
         {% include book-list-tags-index.html %}
 
-        <!-- Criterios de búsqueda -->
-        <div class="row obras">
-        <h2 class="index">Listas dinámicas por:</h2>
-        </div>
-        {% include criterios.html %}
-
-         <!-- Obra del día -->
-        <div class="row obras obra-suerte">
-            <h2 class="index">{% if site.lang == "es" %}Obra del día{% else %}One book by chance{% endif %}</h2>
-        </div>
-       {% include obra-dia.html %}   
-       
-        <!-- Presentación del MOREL (se desactiva al cambiar el título de la página ) -->
-        {% include project-presentation.html %}
 
 
-        <!--Español-->
-        <div class="row obras">
-            <h2 class="index">{% if site.lang == "es" %}Algunos libros en español{% else %}Some books in Spanish{% endif %}</h2>
-        </div>
-        {% include book-list-es.html %}
-
-        <!--Últimas siete traducciones registradas -->        
-        <div class="row obras obra-suerte">
-            <h2 class="index">{% if site.lang == "es" %}Algunas traducciones{% else %}Some book translations{% endif %}</h2>
-        </div>
-        {% include book-list-translations.html %}
-       
-        <!--Francés-->
-        <div class="row obras">
-            <h2 class="index">{% if site.lang == "es" %}Algunos libros en francés{% else %}Some books in French{% endif %}</h2>
-        </div>
-        {% include book-list-fr.html %}
-
-        <!--Alemán-->
-        <div class="row obras">
-            <h2 class="index">{% if site.lang == "es" %}Algunos libros en alemán{% else %}Some books in German{% endif %}</h2>
-        </div>
-        {% include book-list-de.html %}
