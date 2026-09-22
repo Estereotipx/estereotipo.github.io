@@ -68,7 +68,7 @@ defaults:
       path: ""
       type: "books"
     values:
-      layout: "book"
+      layout: "art"
   - scope:
       path: ""
       type: "cities"

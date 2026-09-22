@@ -7,8 +7,8 @@
       {% assign author_firstlast = author_raw | split: ', ' %}
       <a href="{{site.BASE_PATH}}/authors/{{ author_firstlast[0] | slugify:'latin' }}-{{ author_firstlast[1] | slugify:'latin' }}" title="{{ author_firstlast | reverse | join: '' }}">{{ author_firstlast | reverse | join: " " }}</a>
       {% unless forloop.last == true %} + {% endunless %}
-  {% endfor %}
-     {{ book.Date }}{% if book.Edition == book.Date %}. Primera edición{% elsif book.Edition != "" and book.Edition != nil %} // Publicado por primera vez en {{ book.Edition }}{% endif %} {% if book.Archive != "" and book.Archive != nil  %}//
+  {% endfor %}, 
+     {{ book.Date }} {% if book.Archive != "" and book.Archive != nil  %}//
       Digitalizado por <a href="{{site.BASE_PATH}}/repositories/{{ book.Archive | slugify:'latin' }}" title="{{ book.Archive }}">{{ book.Archive }}</a>{% endif %}
   {% else %}
   
