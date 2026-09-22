@@ -25,25 +25,7 @@
        
                     <a href="{% if page.tags contains target_tag %}{{ site.gofundme }}{% else %}{{ book.Download }}{%endif%}" target="_blank" download><img src="
                         {% if site.biba != true %}{{ img-url }}{% elsif book.Cover == '' or book.Cover == nil and book.Call_Number != '' %}{{ fullres_cover }}{% else %}{{ img-url }}{% endif %}" class="responsive" alt="{{ img.Title }}" style="background-color: {% include colors_list.html %}; background-image: {% include background.html %};"></a>
-                    <div class="actions-h">
-                        <!-- AddToAny BEGIN -->
-                        {% if book.Download contains "books.google.com" %}
-                        <label for="o" class="morel"><i class="fa fa-file-pdf-o"></i></label>
-                        {% else %}
-                        {% unless book.Download == "" or book.Download == nil %}
-                        <a class="morel" href="{{ book.Download }}" target="_blank" download><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
-                        {% endunless %}
-                        {%endif%}
-                        {% if book.Library != "" and book.Library != nil%}
-                        <a class="morel" href="{{ book.Library }}" target="_blank"><i class="fa fa-book" aria-hidden="true"></i></a>
-                        {% endif %}
-                        {% if site.zot-item %}
-                        <a class="morel" href="{{ site.zot-item }}{{page.key}}" target="_blank"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                        {% endif %}
-                        {% if page.tags contains target_tag %}
-                        <a class="morel" href="{{site.gofundme}}" target="_blank"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a>
-                        {% endif %}
-                    </div>
+                    
         {% endif %}
     {% endfor %}
 </figure>

@@ -262,12 +262,17 @@ figure img:hover {
 /*Solo l*/
 @media screen and (min-width: 798px) and (max-width: 1039px) {
 
-  .avatar,
   .portada {
     flex-basis: 60%;
     max-width: 60%;
     padding-top: 0rem;
   }
+
+.avatar {
+    flex-basis: 40%;
+     padding-top: 0rem;
+  }
+  
 
   .ficha-container .expo {
     flex-basis: 40%;
@@ -290,7 +295,11 @@ figure img:hover {
     display: block !important;
   }
 
-  .avatar,
+.avatar {
+    flex-basis: 40%;
+     padding-top: 0rem;
+     margin-left: 8rem;
+  }
   .portada {
     flex-basis: 60%;
     max-width: 60%;
