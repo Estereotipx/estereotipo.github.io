@@ -1,0 +1,14 @@
+{% if site.lang == "es" %}
+<a href="{% include book-list-url-page.html %}" title=""><p class="overlay-text-inside">{% if book.Place %}{{ book.Place }}, {% endif %}{{ book.Date }}</p>
+
+<a href="{% include book-list-url-page.html %}" title="">
+    <i class="fa fa-eye see-and-download morel"></i>
+</a>
+
+{% else %}
+<a href="{% include book-list-url-page.html %}" title=""><p class="overlay-text-inside">{% if book.Place %}{{ book.Place }}, {% endif %}{{ book.Date }}</p>
+
+<a href="{% include book-list-url-page.html %}" title="">
+    <i class="fa fa-eye see-and-download morel"></i>
+</a>
+{% endif %}
