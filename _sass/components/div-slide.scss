@@ -1,0 +1,131 @@
+.hero {
+    position: relative;
+    width: min(900px, 100%);
+    height: 420px;
+    border-radius: 20px;
+    overflow: hidden;
+    isolation: isolate;
+    box-shadow: 0 24px 60px -20px rgba(0, 0, 0, .85);
+  }
+
+  /* Radios: invisible but still focusable / keyboard-navigable */
+  .hero > input[type="radio"] {
+    position: absolute;
+    width: 1px; height: 1px;
+    margin: -1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* ---------- Slides ---------- */
+  .slides { position: absolute; inset: 0; }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    gap: 16px;
+    padding: 40px;
+    text-align: center;
+    color: #fff;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.06);
+    transition:
+      opacity .55s ease,
+      transform .55s ease,
+      visibility 0s linear .55s;   /* delay hiding until the fade ends */
+  }
+
+  .slide h2 { margin: 0; font-size: clamp(1.6rem, 4vw, 2.6rem); }
+  .slide p  { margin: 0; max-width: 46ch; line-height: 1.55; opacity: .9; }
+
+  .slide-1 { background: linear-gradient(135deg, #4338ca, #9333ea); }
+  .slide-2 { background: linear-gradient(135deg, #0e7490, #14b8a6); }
+  .slide-3 { background: linear-gradient(135deg, #b45309, #ef4444); }
+
+  /* Active slide */
+  #s1:checked ~ .slides .slide-1,
+  #s2:checked ~ .slides .slide-2,
+  #s3:checked ~ .slides .slide-3 {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    z-index: 2;
+    transition-delay: 0s;
+  }
+
+  /* ---------- Dots ---------- */
+  .dots {
+    position: absolute;
+    left: 0; right: 0; bottom: 20px;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .dots label {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .4);
+    cursor: pointer;
+    transition: background .3s, transform .3s;
+  }
+  .dots label:hover { background: rgba(255, 255, 255, .75); }
+
+  #s1:checked ~ .dots label[for="s1"],
+  #s2:checked ~ .dots label[for="s2"],
+  #s3:checked ~ .dots label[for="s3"] {
+    background: #fff;
+    transform: scale(1.35);
+  }
+
+  /* ---------- Arrows ---------- */
+  .arrows { position: absolute; inset: 0; z-index: 5; pointer-events: none; }
+
+  .arrows label {
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    width: 44px; height: 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .16);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s, background .25s;
+  }
+  .arrows label:hover { background: rgba(255, 255, 255, .34); }
+  .arrows .prev { left: 16px; }
+  .arrows .next { right: 16px; }
+
+  /* Only the arrow pair belonging to the current slide is visible */
+  #s1:checked ~ .arrows .show-1,
+  #s2:checked ~ .arrows .show-2,
+  #s3:checked ~ .arrows .show-3 {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* ---------- Keyboard focus ring ---------- */
+  #s1:focus-visible ~ .dots label[for="s1"],
+  #s2:focus-visible ~ .dots label[for="s2"],
+  #s3:focus-visible ~ .dots label[for="s3"] {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .slide, .dots label, .arrows label { transition-duration: .01ms; }
+  }

@@ -1,7 +1,5 @@
 <!-- presentación-->
  <!-- definir en el index, con "assign": tag, tema y presentacion -->
- {% for v in site.ventanas %}
-            {% if v.tag == tema %}
 <div class="obra-dia sombra">
       <div class="ficha-title">
 
@@ -24,8 +22,6 @@
                 {{ v.content }}
             </p>
         </div>
-         {% endif %}
-{% endfor %}
         
     </div>
     <div class="portada expo" style="">
