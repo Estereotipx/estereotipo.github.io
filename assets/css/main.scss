@@ -15,7 +15,8 @@
 @import 'pages/blog';
 @import 'pages/criteria';
 @import 'vendors/particles';
-@import 'components/img-slide';
+/*@import 'components/img-slide';*/
+@import 'components/div-slide';
 {% if site.local %}
 @import 'components/local_overrides';
 {% endif %}
