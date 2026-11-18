@@ -1,5 +1,5 @@
 ---
-tema: 
+tema: Paisaje colombiano del siglo XIX
 tag: paisaje-colombia
 artista: Frederic Edwin Church
 ---

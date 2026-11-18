@@ -1,41 +1,16 @@
-<section class="hero">
-  <!-- 1. State -->
-  <input type="radio" name="hero" id="s1" checked>
-  <input type="radio" name="hero" id="s2">
-  <input type="radio" name="hero" id="s3">
-
-  <!-- 2. Slides -->
-  <div class="slides">
-    <div class="slide slide-1">
-      <h2>Slide One</h2>
-      <p>Swap me out by clicking a dot or an arrow — everything here is CSS.</p>
-    </div>
-    <div class="slide slide-2">
-      <h2>Slide Two</h2>
-      <p>Only the active panel is visible and hit-testable.</p>
-    </div>
-    <div class="slide slide-3">
-      <h2>Slide Three</h2>
-      <p>Add or remove slides by copying a radio, a panel and a dot.</p>
-    </div>
+<section class="hero" aria-roledescription="carousel" aria-label="Hero carousel">
+  <div class="slide slide-1">
+    <h2>Slide One</h2>
+    <p>This carousel advances on its own — the timing lives entirely in CSS keyframes.</p>
   </div>
 
-  <!-- 3. Arrows (one pair per state) -->
-  <div class="arrows">
-    <label class="prev show-1" for="s3" aria-label="Previous slide">&#8249;</label>
-    <label class="next show-1" for="s2" aria-label="Next slide">&#8250;</label>
-
-    <label class="prev show-2" for="s1" aria-label="Previous slide">&#8249;</label>
-    <label class="next show-2" for="s3" aria-label="Next slide">&#8250;</label>
-
-    <label class="prev show-3" for="s2" aria-label="Previous slide">&#8249;</label>
-    <label class="next show-3" for="s1" aria-label="Next slide">&#8250;</label>
+  <div class="slide slide-2">
+    <h2>Slide Two</h2>
+    <p>Hover the hero to pause the loop, then move away to let it keep cycling.</p>
   </div>
 
-  <!-- 4. Dots -->
-  <div class="dots">
-    <label for="s1" aria-label="Go to slide 1"></label>
-    <label for="s2" aria-label="Go to slide 2"></label>
-    <label for="s3" aria-label="Go to slide 3"></label>
+  <div class="slide slide-3">
+    <h2>Slide Three</h2>
+    <p>Duplicate a slide div, adjust the delays, and the loop stays seamless.</p>
   </div>
 </section>
