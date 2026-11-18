@@ -1,16 +1,31 @@
 <section class="hero" aria-roledescription="carousel" aria-label="Hero carousel">
-  <div class="slide slide-1">
-    <h2>Slide One</h2>
-    <p>This carousel advances on its own — the timing lives entirely in CSS keyframes.</p>
+  <input type="radio" name="hero" id="s1" checked>
+  <input type="radio" name="hero" id="s2">
+  <input type="radio" name="hero" id="s3">
+
+  <div class="slides">
+    <div class="slide slide-1">
+      <h2>Slide One</h2>
+      <p>It advances on its own. The arrows jump the loop to a slide and it keeps cycling.</p>
+    </div>
+    <div class="slide slide-2">
+      <h2>Slide Two</h2>
+      <p>Change <code>--slot</code> on <code>.hero</code> to retime the whole thing.</p>
+    </div>
+    <div class="slide slide-3">
+      <h2>Slide Three</h2>
+      <p>Hovering the content area pauses the loop; hovering an arrow does not.</p>
+    </div>
   </div>
 
-  <div class="slide slide-2">
-    <h2>Slide Two</h2>
-    <p>Hover the hero to pause the loop, then move away to let it keep cycling.</p>
-  </div>
+  <div class="arrows">
+    <label class="prev show-1" for="s3" aria-label="Previous slide">&#8249;</label>
+    <label class="next show-1" for="s2" aria-label="Next slide">&#8250;</label>
 
-  <div class="slide slide-3">
-    <h2>Slide Three</h2>
-    <p>Duplicate a slide div, adjust the delays, and the loop stays seamless.</p>
+    <label class="prev show-2" for="s1" aria-label="Previous slide">&#8249;</label>
+    <label class="next show-2" for="s3" aria-label="Next slide">&#8250;</label>
+
+    <label class="prev show-3" for="s2" aria-label="Previous slide">&#8249;</label>
+    <label class="next show-3" for="s1" aria-label="Next slide">&#8250;</label>
   </div>
 </section>

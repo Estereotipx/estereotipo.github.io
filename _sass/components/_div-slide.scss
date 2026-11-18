@@ -1,22 +1,38 @@
 /* ============================================================
-   Hero carousel
-   Speed knob: --slot on .hero (total loop = --slot × 3)
+   Hero carousel — auto-advance + manual arrows, no JS
+   Knob: --slot on .hero (total loop = --slot × 3)
    ============================================================ */
 
 .hero {
-  --slot: 7s;                       /* time each slide owns */
+  --slot: 5s;                       /* time each slide owns */
 
   position: relative;
-  width: 100%;
-  height: 100vh;
-  border-radius: 5px;
+  width: min(900px, 100%);
+  height: 420px;
+  border-radius: 20px;
   overflow: hidden;
   isolation: isolate;
   background: #111;                 /* hides first-frame flash */
-  box-shadow: 0 3px 3px -2px rgba(0, 0, 0, .85);
+  box-shadow: 0 24px 60px -20px rgba(0, 0, 0, .85);
+}
+
+/* Radios: invisible, but still focusable and arrow-key navigable */
+.hero > input[type="radio"] {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px;
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* ---------- Slides ---------- */
+.slides { position: absolute; inset: 0; }
+
+/* Phase shift: a clicked arrow rewinds the loop by N whole slots */
+#s1:checked ~ .slides { --shift: 0s; }
+#s2:checked ~ .slides { --shift: calc(var(--slot) * -1); }
+#s3:checked ~ .slides { --shift: calc(var(--slot) * -2); }
+
 .slide {
   position: absolute;
   inset: 0;
@@ -42,17 +58,26 @@
 .slide h2 { margin: 0; font-size: clamp(1.6rem, 4vw, 2.6rem); }
 .slide p  { margin: 0; max-width: 46ch; line-height: 1.55; opacity: .9; }
 
-.slide-1 { background: linear-gradient(135deg, #4338ca, #9333ea); animation-delay: 0s; }
-.slide-2 { background: linear-gradient(135deg, #0e7490, #14b8a6); animation-delay: var(--slot); }
-.slide-3 { background: linear-gradient(135deg, #b45309, #ef4444); animation-delay: calc(var(--slot) * 2); }
+.slide-1 {
+  background: linear-gradient(135deg, #4338ca, #9333ea);
+  animation-delay: var(--shift);
+}
+.slide-2 {
+  background: linear-gradient(135deg, #0e7490, #14b8a6);
+  animation-delay: calc(var(--slot) + var(--shift));
+}
+.slide-3 {
+  background: linear-gradient(135deg, #b45309, #ef4444);
+  animation-delay: calc(var(--slot) * 2 + var(--shift));
+}
 
 /* ---------- Keyframes ----------
-   Visible window per slide (as a fraction of its own 3×slot timeline):
-     0%     →  3.333%   fade in   (slot/10)
-     3.333% → 33.333%   hold      (slot − slot/10)
-    33.333% → 36.667%   fade out  (slot/10)
-    36.667% → 100%      hidden, waiting its turn
-   The stops are fixed thirds, so --slot scales the whole loop.
+   Per slide, as a fraction of its own 3×slot timeline:
+     0%       →  3.333%   fade in
+     3.333%   → 33.333%   hold
+    33.333%   → 36.667%   fade out (overlaps next slide's fade in)
+    36.667%   → 100%      hidden, waiting its turn
+   Fixed thirds, so --slot scales the loop proportionally.
 ---------------------------------------------------------------- */
 @keyframes slide-cycle {
   0%      { opacity: 0; transform: scale(1.06); }
@@ -62,17 +87,65 @@
   100%    { opacity: 0; transform: scale(1.06); }
 }
 
-/* ---------- Pause on hover ---------- */
-.hero:hover .slide { animation-play-state: paused; }
+/* Pause on hover of the content area only (arrows sit above .slides) */
+.slides:hover .slide { animation-play-state: paused; }
+
+/* ---------- Arrows ---------- */
+.arrows { position: absolute; inset: 0; z-index: 5; pointer-events: none; }
+
+.arrows label {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  width: 44px; height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .16);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s, background .25s;
+}
+.arrows label:hover { background: rgba(255, 255, 255, .34); }
+.arrows .prev { left: 16px; }
+.arrows .next { right: 16px; }
+
+/* Only the arrow pair for the current state is live */
+#s1:checked ~ .arrows .show-1,
+#s2:checked ~ .arrows .show-2,
+#s3:checked ~ .arrows .show-3 {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Focus ring on the live arrows when the radios have keyboard focus */
+#s1:focus-visible ~ .arrows .show-1,
+#s2:focus-visible ~ .arrows .show-2,
+#s3:focus-visible ~ .arrows .show-3 {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
 
 /* ---------- Small screens ---------- */
 @media (max-width: 600px) {
   .hero  { --slot: 4s; height: 340px; }
   .slide { padding: 28px; }
+  .arrows label { width: 38px; height: 38px; font-size: 19px; }
 }
 
-/* ---------- Reduced motion: freeze on slide 1 ---------- */
+/* ---------- Reduced motion: no loop, radios drive the slides ---------- */
 @media (prefers-reduced-motion: reduce) {
-  .slide   { animation: none; }
-  .slide-1 { opacity: 1; transform: none; }
+  .slide { animation: none; opacity: 0; transform: none; }
+
+  #s1:checked ~ .slides .slide-1,
+  #s2:checked ~ .slides .slide-2,
+  #s3:checked ~ .slides .slide-3 {
+    opacity: 1;
+  }
 }
