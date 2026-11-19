@@ -3,27 +3,44 @@
   <input type="radio" name="hero" id="s2">
   <input type="radio" name="hero" id="s3">
 
-  <div class="slides">
-    <div class="slide slide-1">
+ <!--  <div class="slides">
+    <div class="slide slide-1" style="background: no-repeat url(
+	/BibAV/assets/img/camaca-palm-a-group-frederic-edwin-church-1853-pftyies6.jpg
+); background-size: cover">
       <div class="slide-content">
-        <!-- <h2>Slide One</h2>
-        <p>The header above never moves. Only this panel and its background cycle.</p> -->
+       
       </div>
     </div>
-    <div class="slide slide-2">
+    <div class="slide slide-2" style="background: no-repeat url(
+	/BibAV/assets/img/botanical-studies-seen-from-frederic-edwin-church-1853-3fc8tn7p.jpg
+); background-size: cover">
       <div class="slide-content">
-       <!--  <h2>Slide Two</h2>
-        <p>Same header, different background and copy. Arrows still work.</p> -->
+      
       </div>
     </div>
-    <div class="slide slide-3">
+    <div class="slide slide-3" style="background: no-repeat url(
+	/BibAV/assets/img/botanical-studies-made-from-frederic-edwin-church-1853-s7nvbh4c.jpg); background-size: cover"
+>
       <div class="slide-content">
-     <!--    <h2>Slide Three</h2>
-        <p>Retime everything with <code>--slot</code> on <code>.hero</code>.</p> -->
+     
       </div>
     </div>
-  </div>
+  </div> -->
+  {% assign books_size = site.data.books | where_exp: "book", "book.Tags contains tag"%}
+            {% assign books = books_size | sample: 3 %}{% comment %}add sample:# to limit the number of results{% endcomment %}
+            
+        <div class="slides">    
+          {% for book in books %}
+            {% include book-list-url-img.html %}
+            <div class="slide slide-{% increment my_counter %}" style="background: url({{img-url}}); background-size: cover">
+                <div class="slide-content">
+                              
 
+                </div>
+            </div>
+                    {% endfor %}
+
+        </div>
   <header class="hero-header">
     <span class="brand">
      <div>
