@@ -1,0 +1,46 @@
+<section class="hero" aria-roledescription="carousel" aria-label="Hero carousel">
+  <input type="radio" name="hero" id="s1" checked>
+  <input type="radio" name="hero" id="s2">
+  <input type="radio" name="hero" id="s3">
+
+  <div class="slides">
+    <div class="slide slide-1">
+      <div class="slide-content">
+        <h2>Slide One</h2>
+        <p>The header above never moves. Only this panel and its background cycle.</p>
+      </div>
+    </div>
+    <div class="slide slide-2">
+      <div class="slide-content">
+        <h2>Slide Two</h2>
+        <p>Same header, different background and copy. Arrows still work.</p>
+      </div>
+    </div>
+    <div class="slide slide-3">
+      <div class="slide-content">
+        <h2>Slide Three</h2>
+        <p>Retime everything with <code>--slot</code> on <code>.hero</code>.</p>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero-header">
+    <span class="brand">Brand</span>
+    <nav class="nav">
+      <a href="#">Work</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <div class="arrows">
+    <label class="prev show-1" for="s3" aria-label="Previous slide">&#8249;</label>
+    <label class="next show-1" for="s2" aria-label="Next slide">&#8250;</label>
+
+    <label class="prev show-2" for="s1" aria-label="Previous slide">&#8249;</label>
+    <label class="next show-2" for="s3" aria-label="Next slide">&#8250;</label>
+
+    <label class="prev show-3" for="s2" aria-label="Previous slide">&#8249;</label>
+    <label class="next show-3" for="s1" aria-label="Next slide">&#8250;</label>
+  </div>
+</section>
