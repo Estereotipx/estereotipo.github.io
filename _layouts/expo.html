@@ -10,12 +10,7 @@ layout: default
         {% include div-slide-still.html %}
 
         <!--- prueba imágenes-->
-         {% assign books_size = site.data.books | where_exp: "book", "book.Tags contains tag"%}
-            {% assign books = books_size | sample:3 %}{% comment %}add "| sample:#" to limit the number of results{% endcomment %}
-            {% for book in books %}
-            {% increment my_counter %}
-            {% endfor %} 
-
+         
         <!--ventana lista -->
         {% include book-list-tags-index.html %}
 
