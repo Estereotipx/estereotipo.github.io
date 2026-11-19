@@ -131,7 +131,7 @@ figure img:hover {
 /*xs styling*/
 .avatar,
 .portada {
-  max-width: 68.8%;
+  max-width: 100%;
   margin: auto;
   flex-basis: 100%;
 }
@@ -250,7 +250,7 @@ figure img:hover {
 /*solo m*/
 @media screen and (min-width: 601px) and (max-width: 797px) {
   .portada {
-    max-width: 50%;
+    max-width: 100%;
   }
 
   .header {
@@ -263,8 +263,8 @@ figure img:hover {
 @media screen and (min-width: 798px) and (max-width: 1039px) {
 
   .portada {
-    flex-basis: 60%;
-    max-width: 60%;
+    flex-basis: 100%;
+    max-width: 100%;
     padding-top: 0rem;
   }
 
@@ -279,9 +279,9 @@ figure img:hover {
     max-width: 40%;
   }
 
-  .img-frame {
+  /*.img-frame {
     padding-right: 10%;
-  }
+  }*/
 }
 
 
