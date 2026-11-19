@@ -57,6 +57,7 @@ collections:
     output: true
   ventanas:
     output: true
+    permalink: /expo/:name
 
 defaults:
   - scope:
@@ -89,3 +90,8 @@ defaults:
       type: "repositories"
     values:
       layout: "repository"
+  - scope:
+      path: ""
+      type: "ventanas"
+    values:
+      layout: "expo"
