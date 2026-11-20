@@ -11,7 +11,7 @@ podcast: # Set to true if you want to enable podcast or blog support
 jotform: 
 bsky: 
 mastodon:
-zot-group: 6674034/refracta-piloto/collections/CZ2GYBPZ/collection
+zot-group: https://www.zotero.org/groups/6674034/refracta-piloto
 zot-item: https://www.zotero.org/groups/6674034/refracta-piloto/collections/CZ2GYBPZ/items/
 lang: es
 biba: true # Set to true if you want to enable Biblioteca Abierta features
