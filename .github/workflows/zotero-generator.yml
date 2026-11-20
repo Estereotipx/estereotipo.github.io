@@ -3,7 +3,7 @@ name: Generate and Build Site
 on:
   push:
     branches:
-      - GaME
+      - main
     paths:
       - 'assets/data/books_zotero.csv'
 
