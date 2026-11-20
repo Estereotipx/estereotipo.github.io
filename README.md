@@ -1,20 +1,20 @@
-\# Crea tu sitio web Refracta a partir de una colección de Zotero en 10 sencillos pasos
+# Crea tu sitio web Refracta a partir de una colección de Zotero en 10 sencillos pasos
 
-1\. **Comprueba que cumples los requisitos**
+1. **Comprueba que cumples los requisitos**
 
 - Una [cuenta de Zotero](https://www.zotero.org/user/register/?utm_source=chatgpt.com)
 - Una [cuenta de GitHub](https://github.com/signup?utm_source=chatgpt.com)
 
-2\. **Prepara los campos de Zotero** para un sitio web Refracta. Los elementos de Refracta se añaden del mismo modo que cualquier otro elemento en una [biblioteca de Zotero](https://www.zotero.org/support/adding_items_to_zotero). Solo ten en cuenta:
+2. **Prepara los campos de Zotero** para un sitio web Refracta. Los elementos de Refracta se añaden del mismo modo que cualquier otro elemento en una [biblioteca de Zotero](https://www.zotero.org/support/adding_items_to_zotero). Solo ten en cuenta:
 
 - **El campo URL:** corresponde a la dirección donde está alojado el archivo en máxima resolución (Wikimedia Commons, Archive.org, u otro repositorio).
 - **Imagen visible en la página:** es un archivo JPG de baja o mediana resolución que se añade como `attachment` al elemento de Zotero (consulta la [documentación](https://www.zotero.org/support/attaching_files?utm_source=chatgpt.com) sobre los archivos adjuntos de Zotero).
 
-3\. **[Haz un fork](https://github.com/morelrep/morel-no-code-generator/fork?utm_source=chatgpt.com) de este repositorio**, es decir, [crea una copia](https://github.com/morelrep/morel-no-code-generator/fork?utm_source=chatgpt.com) en tu cuenta de [GitHub](https://github.com?utm_source=chatgpt.com).
+3. **[Haz un fork](https://github.com/morelrep/morel-no-code-generator/fork?utm_source=chatgpt.com) de este repositorio**, es decir, [crea una copia](https://github.com/morelrep/morel-no-code-generator/fork?utm_source=chatgpt.com) en tu cuenta de [GitHub](https://github.com?utm_source=chatgpt.com).
 
-4\. **Ve a la pestaña&#x20;**`actions` y habilita los flujos de trabajo (*workflows*).
+4. **Ve a la pestaña&#x20;**`actions` y habilita los flujos de trabajo (*workflows*).
 
-5\. **Abre el archivo&#x20;**`_config.yml` y modifica los siguientes campos:
+5. **Abre el archivo&#x20;**`_config.yml` y modifica los siguientes campos:
 
 - El `title` con el título de tu sitio.
 - El `tagline` con el lema de tu sitio.
@@ -23,18 +23,18 @@
 
 > La cuenta de Jotform sirve para recibir contribuciones de los usuarios.
 
-6\. **Espera a que se genere el sitio.** Ve a la pestaña `actions` y espera a que el icono de ejecución del flujo de trabajo se ponga en verde. A veces GitHub funciona con lentitud. Si la generación tarda demasiado o falla, espera un par de horas y vuelve a editar el archivo `_config.yml` para activar el proceso.
+6. **Espera a que se genere el sitio.** Ve a la pestaña `actions` y espera a que el icono de ejecución del flujo de trabajo se ponga en verde. A veces GitHub funciona con lentitud. Si la generación tarda demasiado o falla, espera un par de horas y vuelve a editar el archivo `_config.yml` para activar el proceso.
 
-7\. **Reemplaza o añade en&#x20;**`assets/img/tema` las imágenes que prefieras:
+7. **Reemplaza o añade en&#x20;**`assets/img/tema` las imágenes que prefieras:
 
 - `logo.png`
 - `avatar.png`
 
-8\. **Ve a la pestaña&#x20;**`settings`, abre la sección `pages` y selecciona `GitHub Actions` como la "fuente" (_source_) desde la que se generará el sitio.
+8. **Ve a la pestaña&#x20;**`settings`, abre la sección `pages` y selecciona `GitHub Actions` como la "fuente" (_source_) desde la que se generará el sitio.
 
-9\. **Abre el archivo&#x20;**`_abouts/site-description.md` y escribe una descripción de tu sitio. La línea `<!-- more -->` separa el contenido que aparece en el pie de página de todas las páginas de la descripción más extensa que aparece únicamente en la página `about`.
+9. **Abre el archivo&#x20;**`_abouts/site-description.md` y escribe una descripción de tu sitio. La línea `<!-- more -->` separa el contenido que aparece en el pie de página de todas las páginas de la descripción más extensa que aparece únicamente en la página `about`.
 
-10\. **Genera el contenido a partir de Zotero** [exportando una colección](https://forums.zotero.org/discussion/5286/can-one-export-a-collection-and-not-the-entire-library?utm_source=chatgpt.com), subcolección o biblioteca como un archivo `csv`.
+10. **Genera el contenido a partir de Zotero** [exportando una colección](https://forums.zotero.org/discussion/5286/can-one-export-a-collection-and-not-the-entire-library?utm_source=chatgpt.com), subcolección o biblioteca como un archivo `csv`.
 
 10.1. Añade una imagen de portada al elemento correspondiente de tu biblioteca de Zotero arrastrándola como archivo adjunto.
 10.2. Clona el repositorio en una carpeta local.
