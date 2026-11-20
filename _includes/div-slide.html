@@ -2,21 +2,23 @@
   <input type="radio" name="hero" id="s1" checked>
   <input type="radio" name="hero" id="s2">
   <input type="radio" name="hero" id="s3">
+   {% assign tag = "paisaje-colombia" %}{% comment %}get the tag from the page front matter{% endcomment %}
+   {% assign books_size = site.data.books | where_exp: "book", "book.Tags contains tag"%}
+            {% assign books = books_size | sample: 3 %}{% comment %}add sample:# to limit the number of results{% endcomment %}
+            
+        <div class="slides">    
+          {% for book in books %}
+            {% include book-list-url-img.html %}
+            <div class="slide slide-{{ forloop.index0 }}" style="background: url({{img-url}}); background-size: cover">
+                <div class="slide-content">
+                  <h1>{{ book.Title }}</h1>            
+                  <h2>{{ book.Author }}</h2>
 
-  <div class="slides">
-    <div class="slide slide-1">
-      <h2>Slide One</h2>
-      <p>It advances on its own. The arrows jump the loop to a slide and it keeps cycling.</p>
-    </div>
-    <div class="slide slide-2">
-      <h2>Slide Two</h2>
-      <p>Change <code>--slot</code> on <code>.hero</code> to retime the whole thing.</p>
-    </div>
-    <div class="slide slide-3">
-      <h2>Slide Three</h2>
-      <p>Hovering the content area pauses the loop; hovering an arrow does not.</p>
-    </div>
-  </div>
+                </div>
+            </div>
+                    {% endfor %}
+
+        </div>
 
   <div class="arrows">
     <label class="prev show-1" for="s3" aria-label="Previous slide">&#8249;</label>
